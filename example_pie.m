@@ -1,36 +1,27 @@
 clear
 close all
 
-%Example on how to run make_pie with the AX32 XBT data (NOAA/AOML)
-% %LOAD DATA
-% oi = load('../AX32/temp_ax32_paper.mat');
-% C = oi.npf;
-% for ii=1:length(C)
-%    time(ii) = mean(oi.time_xbt{ii});
-% end
-% timeYMD = datestr(time','yyyymmdd');
-% 
-% clear oi time
+% Example on how to run make_pie with the AX32 XBT data (NOAA/AOML)
 
-%LOAD DATA
+% LOAD DATA
 load  AX32_timedata.mat
 
-%CREATE X,Y AXES
+% CREATE X,Y AXES
 data1 = str2num(timeYMD(:,5:6))'; %Month numbers
 data2 = str2num(timeYMD(:,1:4))'; %year numbers
 
-%GET DATA RANGE
+% GET DATA RANGE
 axis1 = [min(data1):max(data1)]';
 axis2 = [min(data2):max(data2)]';
 
-%create month axis if wanted
+% create month axis if wanted
 leg1 = {'jan','feb','mar','apr','may','jun','jul','ago','sep','oct','nov','dec'};
 
-%Add N number of spaces in the middle
+% Add N number of spaces in the middle
 N = 3;
 C = npf; %number of profiles/transect
 
-%MAKE PIE PLOTS
+% MAKE PIE PLOTS
 %1: month, year
 make_pie(axis1,axis2,leg1,[],data1,data2,C,N)
 print -dpng -r300 example_pie1.png
