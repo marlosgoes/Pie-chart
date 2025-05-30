@@ -15,7 +15,7 @@ axis1 = [min(data1):max(data1)]';
 axis2 = [min(data2):max(data2)]';
 
 % create month axis if wanted
-leg1 = {'jan','feb','mar','apr','may','jun','jul','ago','sep','oct','nov','dec'};
+leg1 = {'jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'};
 
 % Add N number of spaces in the middle
 N = 3;
